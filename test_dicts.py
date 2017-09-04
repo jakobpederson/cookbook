@@ -43,21 +43,21 @@ class TestDicts(unittest.TestCase):
         result = dicts.remove_second_items_from_first(self.b, self.a)
         self.assertEqual(expected, result)
 
-    def test_what_does_enumerate_do(self):
+    def test_enumerate_can_be_exhausted(self):
         self.c = {
             "pikachu": "electric",
             "charmander": "fire",
             "bulbasaur": "leaf",
             "squirtle": "water"
         }
-        for k, v in enumerate(self.c):
-            print(k, v)
         self.d = [
             "jigglypuff",
             "wooper",
             "sentret",
             "murkcrow"
         ]
-        for k, v in enumerate(self.d):
-            print(k, v)
-        self.fail('x')
+        dct = dicts.enumerate_dict(self.c)
+        lst = dicts.enumerate_dict(self.d)
+        result_dct = [x for x in dct]
+        self.assertEqual(len(result_dct), 4)
+        self.assertEqual(len(list(dct)), 0)
