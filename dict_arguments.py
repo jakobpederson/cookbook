@@ -3,7 +3,6 @@
 def basic_example(dog, cat):
     return (dog, cat)
 
-
 def args(*args):
     return [x*2 for x in args]
 
