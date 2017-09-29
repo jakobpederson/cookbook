@@ -44,3 +44,9 @@ class FlattenANestedSequenceTest(unittest.TestCase):
         expected = [1, 2]
         result = self.sut.flatten(lst)
         self.assertCountEqual(expected, result)
+
+    def test_d(self):
+        lst = [1, "cde"]
+        expected = [1, "cde"]
+        result = self.sut.flatten(lst)
+        self.assertCountEqual(expected, result)
