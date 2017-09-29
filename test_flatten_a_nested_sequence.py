@@ -36,4 +36,5 @@ class FlattenANestedSequenceTest(unittest.TestCase):
         lst = [1, [2, [3, [4, [[[[[[[5], 6], 7], 8], 9], 10] ]]]]]
         expected = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
         result = self.sut.flatten(lst)
+        print('RESULT:', result)
         self.assertCountEqual(expected, result)
