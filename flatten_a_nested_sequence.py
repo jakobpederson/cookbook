@@ -1,4 +1,4 @@
-
+from collections import Iterable
 
 class FlattenANestedSequence():
 
@@ -7,7 +7,7 @@ class FlattenANestedSequence():
 
     def recurs(self, lst):
         for value in lst:
-            if type(value) == list:
+            if isinstance(value, Iterable):
                 yield from self.recurs(value)
             else:
                 yield value
